@@ -1,2 +1,0 @@
-DELETE FROM `opcodes` WHERE `OpcodeValue` IN (13731);
-INSERT INTO `opcodes` (`OpcodeName`, `OpcodeValue`, `ClientBuild`, `StructureBuild`) VALUES ('SMSG_BATTLEFIELD_MGR_ENTERING', 13731, 15595, 15595);
