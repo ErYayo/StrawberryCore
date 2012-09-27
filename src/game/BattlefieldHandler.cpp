@@ -74,10 +74,10 @@ void WorldSession::HandleBattlefieldJoinQueueOpcode( WorldPacket &recv_data )
     {
         send_data.WriteGuidBytes(Queue->GetId(),QueueGuidBytes,8,0);
     }
-	send_data << uint8(1); //can join
+    send_data << uint8(1); //can join
     send_data.WriteGuidBytes(Battlefield->getGuid(),BattlefieldBytes,5,0);
-	send_data << uint8(0); // warmup
-	send_data.WriteGuidBytes(Battlefield->getGuid(),BattlefieldBytes,3,5);
+    send_data << uint8(0); // warmup
+    send_data.WriteGuidBytes(Battlefield->getGuid(),BattlefieldBytes,3,5);
 
     send_data << uint32(Battlefield->GetZoneId());
 

@@ -41,9 +41,9 @@ void BattlefieldMgr::Initialize()
     Battlefield * WG = new BattlefieldWG();
     m_battlefieldList[WG->getGuid()] = WG;
     m_queueMap[WG->getGuid()] = new BattlefieldQueue(BATTLEFIELD_WG);
-	Battlefield * TB = new BattlefieldTB();
-	m_battlefieldList[TB->getGuid()] = TB;
-	m_queueMap[TB->getGuid()] = new BattlefieldQueue(BATTLEFIELD_TB);
+    Battlefield * TB = new BattlefieldTB();
+    m_battlefieldList[TB->getGuid()] = TB;
+    m_queueMap[TB->getGuid()] = new BattlefieldQueue(BATTLEFIELD_TB);
 }
 
 void BattlefieldMgr::Update(uint32 uiDiff)

@@ -1142,7 +1142,7 @@ bool ChatHandler::HandleAccountSetGmLevelCommand(char* args)
         return false;
 
     int32 gm;
-	uint32 gmRealmID = realmID;
+    uint32 gmRealmID = realmID;
     if (!ExtractInt32(&args, gm))
         return false;
 
@@ -1180,7 +1180,7 @@ bool ChatHandler::HandleAccountSetGmLevelCommand(char* args)
     }
 
     PSendSysMessage(LANG_YOU_CHANGE_SECURITY, targetAccountName.c_str(), gm);
-	// If gmRealmID is -1, delete all values for the account id, else, insert values for the specific realmID
+    // If gmRealmID is -1, delete all values for the account id, else, insert values for the specific realmID
         if (gmRealmID == -1)
         {
             LoginDatabase.PExecute("DELETE FROM account_access WHERE id = '%u'", targetAccountId);

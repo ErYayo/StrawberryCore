@@ -993,24 +993,24 @@ int WorldSocket::HandleAuthSession(WorldPacket& recvPacket)
     std::string os = fields[9].GetString();
 
     delete result;
-	// Checks gmlevel per Realm
-	result = 
-		LoginDatabase.PQuery ("SELECT "
-							  "RealmID, "            //0
-							  "gmlevel "             //1
-							  "FROM account_access "
-							  "WHERE id = '%d'"
-							  " AND (RealmID = '%d'"
-						  " OR RealmID = '-1')",
-							  id, realmID);
-	if(!result)
-    	security = 0;
-	else
-	{
-		fields = result->Fetch ();
-		security = fields[1].GetInt32();
-		delete result;
-	}
+    // Checks gmlevel per Realm
+    result = 
+        LoginDatabase.PQuery ("SELECT "
+                              "RealmID, "            //0
+                              "gmlevel "             //1
+                              "FROM account_access "
+                              "WHERE id = '%d'"
+                              " AND (RealmID = '%d'"
+                          " OR RealmID = '-1')",
+                              id, realmID);
+    if(!result)
+        security = 0;
+    else
+    {
+        fields = result->Fetch ();
+        security = fields[1].GetInt32();
+        delete result;
+    }
     // Re-check account ban (same check as in StrawberryRealm)
     QueryResult *banresult =
           LoginDatabase.PQuery("SELECT 1 FROM account_banned WHERE id = %u AND active = 1 AND (unbandate > UNIX_TIMESTAMP() OR unbandate = bandate)"
