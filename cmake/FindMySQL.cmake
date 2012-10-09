@@ -75,6 +75,7 @@ find_path(MYSQL_INCLUDE_DIR
     "C:/Program Files/MySQL/include"
     "C:/Program Files/MySQL/MySQL Server 5.0/include"
     "C:/Program Files/MySQL/MySQL Server 5.1/include"
+    "C:/Program Files/MySQL/MySQL Server 5.5/include"
     "C:/MySQL/include"
     "[HKEY_LOCAL_MACHINE\\SOFTWARE\\MySQL AB\\MySQL Server 5.0;Location]/include"
     "[HKEY_LOCAL_MACHINE\\SOFTWARE\\MySQL AB\\MySQL Server 5.1;Location]/include"
