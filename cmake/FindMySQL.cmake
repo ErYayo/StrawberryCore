@@ -104,19 +104,35 @@ endforeach(LIB ${MYSQL_ADD_LIBRARY})
 endif( UNIX )
 
 if( WIN32 )
-  find_library( MYSQL_LIBRARY
+  find_library( MYSQL_LIBRARY 
     NAMES
-      mysql libmysql ${LIB}
+      libmysql
     PATHS
       ${MYSQL_ADD_LIBRARIES_PATH}
-      "C:/Program Files/MySQL/lib"
-      "C:/Program Files/MySQL/MySQL Server 5.0/lib/opt"
+      "C:/Program Files/MySQL/MySQL Server 5.6/lib/opt"
+      "C:/Program Files/MySQL/MySQL Server 5.5/lib/opt"
       "C:/Program Files/MySQL/MySQL Server 5.1/lib/opt"
+      "C:/Program Files/MySQL/MySQL Server 5.0/lib/opt"
+      "C:/Program Files/MySQL/lib"
       "C:/MySQL/lib/debug"
-      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\MySQL AB\\MySQL Server 5.0;Location]/lib/opt"
+      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\MySQL AB\\MySQL Server 5.6;Location]/lib"
+      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\MySQL AB\\MySQL Server 5.6;Location]/lib/opt"
+      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\MySQL AB\\MySQL Server 5.5;Location]/lib"
+      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\MySQL AB\\MySQL Server 5.5;Location]/lib/opt"
+      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\MySQL AB\\MySQL Server 5.1;Location]/lib"
       "[HKEY_LOCAL_MACHINE\\SOFTWARE\\MySQL AB\\MySQL Server 5.1;Location]/lib/opt"
-      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MySQL AB\\MySQL Server 5.0;Location]/lib/opt"
+      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\MySQL AB\\MySQL Server 5.0;Location]/lib"
+      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\MySQL AB\\MySQL Server 5.0;Location]/lib/opt"
+      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MySQL AB\\MySQL Server 5.6;Location]/lib"
+      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MySQL AB\\MySQL Server 5.6;Location]/lib/opt"
+      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MySQL AB\\MySQL Server 5.5;Location]/lib"
+      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MySQL AB\\MySQL Server 5.5;Location]/lib/opt"
+      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MySQL AB\\MySQL Server 5.1;Location]/lib"
       "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MySQL AB\\MySQL Server 5.1;Location]/lib/opt"
+      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MySQL AB\\MySQL Server 5.0;Location]/lib"
+      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MySQL AB\\MySQL Server 5.0;Location]/lib/opt"
+      "$ENV{ProgramFiles}/MySQL/*/lib/opt"
+      "$ENV{SystemDrive}/MySQL/*/lib/opt"
       "c:/msys/local/include"
     DOC "Specify the location of the mysql library here."
   )
