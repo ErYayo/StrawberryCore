@@ -72,19 +72,25 @@ find_path(MYSQL_INCLUDE_DIR
     /usr/local/include
     /usr/local/include/mysql
     /usr/local/mysql/include
-    "C:/Program Files/MySQL/include"
-    "C:/Program Files/MySQL/MySQL Server 5.0/include"
-    "C:/Program Files/MySQL/MySQL Server 5.1/include"
+    "C:/Program Files/MySQL/MySQL Server 5.6/include"
     "C:/Program Files/MySQL/MySQL Server 5.5/include"
+    "C:/Program Files/MySQL/MySQL Server 5.1/include"
+    "C:/Program Files/MySQL/MySQL Server 5.0/include"
+    "C:/Program Files/MySQL/include"
     "C:/MySQL/include"
-    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\MySQL AB\\MySQL Server 5.0;Location]/include"
+    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\MySQL AB\\MySQL Server 5.6;Location]/include"
+    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\MySQL AB\\MySQL Server 5.5;Location]/include"
     "[HKEY_LOCAL_MACHINE\\SOFTWARE\\MySQL AB\\MySQL Server 5.1;Location]/include"
-    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MySQL AB\\MySQL Server 5.0;Location]/include"
+    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\MySQL AB\\MySQL Server 5.0;Location]/include"
+    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MySQL AB\\MySQL Server 5.6;Location]/include"
+    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MySQL AB\\MySQL Server 5.5;Location]/include"
     "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MySQL AB\\MySQL Server 5.1;Location]/include"
+    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\MySQL AB\\MySQL Server 5.0;Location]/include"
+    "$ENV{ProgramFiles}/MySQL/*/include"
+    "$ENV{SystemDrive}/MySQL/*/include"
     "c:/msys/local/include"
   DOC
-    "Specify the directory containing mysql.h."
-)
+    "Specify the directory containing mysql.h.")
 
 if( UNIX )
 foreach(LIB ${MYSQL_ADD_LIBRARIES})
